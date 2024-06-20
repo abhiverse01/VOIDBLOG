@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="blog-post">
+        <h1>{{ post.title }}</h1>
+        <p class="post-date">{{ post.date_posted.strftime('%Y-%m-%d') }}</p>
+        {% if post.image_url %}
+        <img src="{{ post.image_url }}" alt="{{ post.title }}" style="max-width: 100%; height: auto; margin-bottom: 20px;">
+        {% endif %}
+        <div class="content">
+            {{ post.content }}
+        </div>
+        <form action="{{ url_for('delete_post', post_id=post.id) }}" method="POST" style="margin-top: 20px;">
+            <button type="submit" class="delete-button">Delete Post</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="form-wrapper">
+        <form action="{{ url_for('write') }}" method="POST" enctype="multipart/form-data">
+            <input type="text" name="title" placeholder="Blog Title" required>
+            <textarea name="content" placeholder="Write your blog here..." required></textarea>
+            <input type="file" name="image" accept="image/*">
+            <button type="submit">Publish</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

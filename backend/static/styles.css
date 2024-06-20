@@ -1,0 +1,309 @@
+body {
+    font-family: 'Century Gothic', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    line-height: 1.6;
+    font-size: 1rem; /* Ensure consistent font size */
+}
+
+header {
+    background: linear-gradient(90deg, #0d3b66, #144d80); /* Modern gradient background */
+    color: #fff;
+    padding: 0.75rem 1.5rem; /* Reduced padding for more optimal look */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Stick to the top */
+    top: 0; /* Position at the top */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+header .logo {
+    font-size: 1.5rem; /* Reduced font size for a more balanced look */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff; /* Ensure logo text color matches the header color */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul li {
+    margin-left: 1rem;
+    position: relative; /* For dropdowns */
+}
+
+header nav ul li a {
+    color: #fff; /* Ensure text color is white */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px; /* More rounded corners */
+    transition: background 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between icon and text */
+    font-size: 0.9rem; /* Adjusted font size for better balance */
+}
+
+header nav ul li a:hover {
+    background: #1ce1ca; /* Hover background */
+    color: #0d3b66; /* Change text color on hover */
+}
+
+header nav ul li a .icon {
+    font-size: 1rem; /* Adjusted icon size for better balance */
+}
+
+.container {
+    margin-top: 2rem;
+    max-width: 800px;
+    padding: 0 2rem; /* Add padding for better spacing */
+}
+
+h1, h2 {
+    color: #0d3b66;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem; /* Adjusted font size for consistency */
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    margin-bottom: 1rem;
+}
+
+.contact-info a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 1rem; /* Adjusted font size for consistency */
+    display: flex;
+    align-items: center;
+}
+
+.contact-info a:hover {
+    color: #0056b3;
+}
+
+.contact-icon {
+    width: 20px; /* Adjusted icon size */
+    height: 20px; /* Adjusted icon size */
+    margin-right: 10px;
+}
+
+.card, .blog-post {
+    background: #fff;
+    padding: 1.5rem; /* Reduced padding for a more compact look */
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.card:hover, .blog-post:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card h2, .blog-post h1 {
+    margin-top: 0;
+    color: #444;
+}
+
+.card img, .blog-post img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.9rem; /* Adjusted font size for consistency */
+}
+
+.read-more i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.read-more:hover i {
+    transform: translateX(5px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input[type="text"],
+form textarea {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    transition: border 0.3s;
+}
+
+form input[type="text"]:focus,
+form textarea:focus {
+    border-color: #007BFF;
+}
+
+form button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #0056b3;
+}
+
+/* Footer Enhancements */
+footer {
+    background: linear-gradient(90deg, #0d3b66, #144d80); /* Gradient background */
+    color: #fff;
+    text-align: center;
+    padding: 0.75rem 1.5rem; /* Reduced padding for more optimal look */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem; /* Adjusted font size for consistency */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem; /* Ensure consistent font size */
+}
+
+/* Additional UI Enhancements */
+a {
+    color: #007BFF;
+    text-decoration: none; /* Remove underline for modern look */
+    transition: color 0.3s, text-shadow 0.3s; /* Add transition for smooth hover effect */
+}
+
+a:hover {
+    color: #0056b3;
+    text-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add subtle text shadow on hover */
+}
+
+/* Button Enhancements */
+button, .btn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 20px; /* More rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+button:focus, .btn:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* Add custom focus outline */
+}
+
+/* Card Enhancements */
+.card, .blog-post {
+    background: #fff;
+    padding: 1.5rem; /* Reduced padding for a more compact look */
+    margin-bottom: 2rem;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card:hover, .blog-post:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+
+    .container {
+        padding: 0 1rem; /* Reduce padding for smaller screens */
+    }
+
+    footer {
+        padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+        font-size: 0.8rem; /* Adjust font size for footer */
+    }
+}
+
+/* Navbar Mobile Adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 0;
+        width: 100%;
+    }
+
+    header nav ul li a {
+        width: 100%;
+        padding: 1rem;
+        text-align: left;
+    }
+}
+
+.delete-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.delete-button:hover {
+    background-color: #ff1a1a;
+}
