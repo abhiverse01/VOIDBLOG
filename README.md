@@ -100,5 +100,8 @@
     <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
 </ul>
 
+<h2>Screenshot</h2>
+        <img src="sitescreenshot.png" alt="VOIDBlog Screenshot">
+
 </body>
 
