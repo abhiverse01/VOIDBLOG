@@ -3,8 +3,11 @@
 
 <h1>VOIDBlog</h1>
 
-<p>Welcome to VOIDBlog, your number one source for all things related to AI, ML, NLP, and LLMs. We're dedicated to providing you the very best of exploration, analysis, and fun. Founded in 2024 by Abhishek Shah, VOIDBlog has come a long way from its beginnings in the year 2024. When Abhishek first started out, his passion for blogs drove him to start his own platform.</p>
+<p>Welcome to VOIDBlog, your number-one source for all things related to AI, ML, NLP, and LLMs. We're dedicated to providing you the very best of exploration, analysis, and fun. Founded in 2024 by Abhishek Shah, VOIDBlog has come a long way from its beginnings in the year 2024. When Abhishek first started out, his passion for blogs drove him to start his own platform.</p>
 
+<h2>Screenshot</h2>
+        <img src="sitescreenshot.png" alt="VOIDBlog Screenshot">
+        
 <h2>Table of Contents</h2>
 <ul>
     <li><a href="#about-the-project">About The Project</a></li>
