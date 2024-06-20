@@ -10,7 +10,9 @@
 </head>
 <body>
     <header>
-        <div class="logo">VOIDBlog</div>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='icons/logo6.png') }}" alt="VOIDBlog Logo">
+        </div>
         <nav>
             <ul>
                 <li><a href="{{ url_for('home') }}"><i class="fas fa-home icon"></i> Home</a></li>
@@ -23,7 +25,39 @@
         {% block content %}{% endblock %}
     </main>
     <footer>
-        Abhishek Shah | 2024
+        <ul class="contact-info">
+            <li>
+                <a href="mailto:www.abhishekshah007@gmail.com">
+                    <img src="{{ url_for('static', filename='icons/email.png') }}" alt="Email" class="contact-icon">
+                    www.abhishekshah007@gmail.com
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/abhiverse01/" target="_blank">
+                    <img src="{{ url_for('static', filename='icons/linkedin.png') }}" alt="LinkedIn" class="contact-icon">
+                    LinkedIn: Abhiverse01
+                </a>
+            </li>
+            <li>
+                <a href="https://www.github.com/abhiverse01" target="_blank">
+                    <img src="{{ url_for('static', filename='icons/github.png') }}" alt="GitHub" class="contact-icon">
+                    GitHub: Abhiverse01
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="{{ url_for('static', filename='icons/facebook.png') }}" alt="Facebook" class="contact-icon">
+                    Follow on Facebook
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="{{ url_for('static', filename='icons/instagram.png') }}" alt="Instagram" class="contact-icon">
+                    Follow on Instagram
+                </a>
+            </li>
+        </ul>
+        <p>Abhishek Shah | 2024</p>
     </footer>
 </body>
 </html>

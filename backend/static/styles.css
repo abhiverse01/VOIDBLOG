@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Century Gothic', sans-serif;
     color: #333;
@@ -5,7 +6,95 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     line-height: 1.6;
-    font-size: 1rem; /* Ensure consistent font size */
+    font-size: 1rem;
+}
+
+/* Form Styles */
+.container {
+    max-width: 100%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #0d3b66;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #0d3b66;
+}
+
+input[type="text"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+input[type="file"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+textarea {
+    height: 400px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2rem; /* Add margin at the bottom */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+
+/* Adjustments for Full Width */
+.form-group.full {
+    width: 100%;
 }
 
 header {
@@ -19,14 +108,23 @@ header {
     position: sticky; /* Stick to the top */
     top: 0; /* Position at the top */
     z-index: 1000; /* Ensure it stays on top */
+    max-height: 50px;
+    width: auto;
 }
 
-header .logo {
-    font-size: 1.5rem; /* Reduced font size for a more balanced look */
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #fff; /* Ensure logo text color matches the header color */
+.logo img {
+    max-height: 140px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
 }
+
+
+/* Adjustments for alignment if needed */
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
 
 header nav ul {
     list-style: none;
@@ -63,9 +161,9 @@ header nav ul li a .icon {
 }
 
 .container {
-    margin-top: 2rem;
-    max-width: 800px;
-    padding: 0 2rem; /* Add padding for better spacing */
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
 }
 
 h1, h2 {
@@ -80,44 +178,58 @@ p {
     color: #444;
 }
 
-.contact-info {
-    list-style: none;
-    padding: 0;
+.intro {
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
-.contact-info li {
+.intro img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
     margin-bottom: 1rem;
 }
 
-.contact-info a {
-    color: #007BFF;
-    text-decoration: none;
-    font-size: 1rem; /* Adjusted font size for consistency */
+.latest-blogs, .additional-blogs {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.contact-info a:hover {
-    color: #0056b3;
+.latest-blogs .blog-list, .additional-blogs .blog-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.contact-icon {
-    width: 20px; /* Adjusted icon size */
-    height: 20px; /* Adjusted icon size */
-    margin-right: 10px;
+.latest-blogs .blog-list .card, .additional-blogs .blog-list .card {
+    width: calc(33% - 1rem);
+    box-sizing: border-box;
 }
+
+.latest-blogs .more-blogs-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem; /* Add margin at the bottom */
+}
+
 
 .card, .blog-post {
     background: #fff;
-    padding: 1.5rem; /* Reduced padding for a more compact look */
+    padding: 1rem;
     margin-bottom: 2rem;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s, transform 0.3s;
+    width: calc(33% - 1rem);
+    box-sizing: border-box;
 }
 
 .card:hover, .blog-post:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px); /* Slight lift on hover */
 }
 
 .card h2, .blog-post h1 {
@@ -150,59 +262,56 @@ p {
     transform: translateX(5px);
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
 
-form input[type="text"],
-form textarea {
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: #f9f9f9;
-    transition: border 0.3s;
-}
-
-form input[type="text"]:focus,
-form textarea:focus {
-    border-color: #007BFF;
-}
-
-form button {
-    background: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-form button:hover {
-    background: #0056b3;
-}
 
 /* Footer Enhancements */
 footer {
     background: linear-gradient(90deg, #0d3b66, #144d80); /* Gradient background */
     color: #fff;
     text-align: center;
-    padding: 0.75rem 1.5rem; /* Reduced padding for more optimal look */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 2rem 1.5rem; /* Increased padding for better spacing */
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
     font-size: 0.9rem; /* Adjusted font size for consistency */
+}
+
+footer .contact-info {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+footer .contact-info li {
+    margin-bottom: 1rem;
+    display: inline-block;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+footer .contact-info a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+footer .contact-info a:hover {
+    color: #1ce1ca;
+}
+
+footer .contact-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
 
 footer p {
     margin: 0;
     font-size: 0.9rem; /* Ensure consistent font size */
+    color: #fff; /* Change text color to white */
+    font-weight: bold; /* Make text bold */
 }
+
 
 /* Additional UI Enhancements */
 a {
@@ -238,21 +347,6 @@ button:focus, .btn:focus {
     box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* Add custom focus outline */
 }
 
-/* Card Enhancements */
-.card, .blog-post {
-    background: #fff;
-    padding: 1.5rem; /* Reduced padding for a more compact look */
-    margin-bottom: 2rem;
-    border-radius: 15px; /* More rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
-    transition: box-shadow 0.3s, transform 0.3s;
-}
-
-.card:hover, .blog-post:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
-    transform: translateY(-5px); /* Slight lift on hover */
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
@@ -264,8 +358,19 @@ button:focus, .btn:focus {
     }
 
     footer {
-        padding: 0.5rem 1rem; /* Adjust padding for smaller screens */
+        padding: 1rem; /* Adjust padding for smaller screens */
         font-size: 0.8rem; /* Adjust font size for footer */
+    }
+
+    .card, .blog-post {
+        width: 100%; /* Full width for smaller screens */
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .intro {
+        text-align: center;
+        padding: 1rem;
     }
 }
 
@@ -306,4 +411,74 @@ button:focus, .btn:focus {
 
 .delete-button:hover {
     background-color: #ff1a1a;
+}
+
+.about-section {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    max-width: 600px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .profile-image {
+        margin-right: 2rem;
+        margin-bottom: 0;
+    }
+}
+
+.objectives {
+    text-align: center;
+    margin: 3rem 0;
+    padding: 2rem;
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.objectives h2 {
+    color: #0d3b66;
+    margin-bottom: 1.5rem;
+}
+
+.objectives ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.objectives li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.objectives li::before {
+    content: attr(data-emoji);
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
 }

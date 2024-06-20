@@ -1,17 +1,64 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-    <div class="blog-list">
-        {% for post in posts %}
-        <div class="card">
-            {% if post.image_url %}
-            <img src="{{ post.image_url }}" alt="{{ post.title }}" style="max-width: 100%; height: auto; margin-bottom: 10px;">
-            {% endif %}
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.content[:150] }}...</p>
-            <a href="{{ url_for('post', post_id=post.id) }}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+    <!-- Introduction Section -->
+    <section class="intro">
+        <img src="{{ url_for('static', filename='images/intro.png') }}" alt="Introduction Image" class="intro-image">
+        <h1>Welcome to VOIDBlog</h1>
+        <p>Your number one source for all things related to AI, ML, NLP, and LLMs.</p>
+    </section>
+
+    <!-- Objectives Section -->
+    <section class="objectives">
+        <h2>Our Objectives</h2>
+        <ul>
+            <li>🌟 To add a newer and fresh take on the rapid expansion of modern AI and ML technologies.</li>
+            <li>🔍 To explore experimental learning through project-based outcomes and documenting it here.</li>
+            <li>📰 To provide modern day news and updates in tech.</li>
+            <li>💡 To provide the user with a daily dose of exciting new tech facts to learn about.</li>
+            <li>🚀 Just something cool to do and share with the community.</li>
+        </ul>
+    </section>
+
+    <!-- Latest Blogs Section -->
+    <section class="latest-blogs">
+        <h2>Latest Blogs</h2>
+        <div class="blog-list">
+            {% for post in posts[:3] %}
+            <div class="card">
+                <img src="{{ post.image_url }}" alt="{{ post.title }}">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.content[:150] }}...</p>
+                <a href="{{ url_for('post', post_id=post.id) }}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
+        <div class="more-blogs-btn">
+            <button id="load-more" class="btn">More Blogs</button>
+        </div>
+    </section>
+
+    <!-- Additional Blogs Section (Hidden Initially) -->
+    <section class="additional-blogs" style="display: none;">
+        <div class="blog-list">
+            {% for post in posts[3:] %}
+            <div class="card">
+                <img src="{{ post.image_url }}" alt="{{ post.title }}">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.content[:150] }}...</p>
+                <a href="{{ url_for('post', post_id=post.id) }}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
 </div>
+
+<!-- JavaScript to Toggle More Blogs -->
+<script>
+    document.getElementById('load-more').addEventListener('click', function() {
+        document.querySelector('.additional-blogs').style.display = 'block';
+        this.style.display = 'none';
+    });
+</script>
+
 {% endblock %}

@@ -2,11 +2,21 @@
 {% block content %}
 <div class="container">
     <div class="form-wrapper">
+        <h1>Write a New Blog Post</h1>
         <form action="{{ url_for('write') }}" method="POST" enctype="multipart/form-data">
-            <input type="text" name="title" placeholder="Blog Title" required>
-            <textarea name="content" placeholder="Write your blog here..." required></textarea>
-            <input type="file" name="image" accept="image/*">
-            <button type="submit">Publish</button>
+            <div class="form-group full">
+                <label for="title">Blog Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter your blog title" required>
+            </div>
+            <div class="form-group full">
+                <label for="image">Upload Image</label>
+                <input type="file" id="image" name="image" accept="image/*">
+            </div>
+            <div class="form-group full">
+                <label for="content">Content</label>
+                <textarea id="content" name="content" placeholder="Write your blog here..." required></textarea>
+            </div>
+            <button type="submit" class="btn">Publish</button>
         </form>
     </div>
 </div>
